@@ -15,6 +15,7 @@
     "@skeletonlabs/skeleton": "2.8.0",
     "@skeletonlabs/tw-plugin": "0.3.1",
     "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/adapter-node": "^4.0.1",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@tailwindcss/forms": "^0.5.7",
@@ -37,5 +38,9 @@
     "vite": "^5.0.3",
     "vite-plugin-tailwind-purgecss": "0.2.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "stream-chat": "^8.16.0"
+  }
 }

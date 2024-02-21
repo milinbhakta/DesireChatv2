@@ -1,23 +1,31 @@
 <script lang="ts">
 	import '../app.postcss';
+	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
+	import Nav from './Nav.svelte';
 </script>
 
-<header class="header-bar">
-	<div class="container">
-		<h1 class="h2 ml-3 p-3 capitalize">
-			<span class="bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone">
-				Desire Chat
-			</span>
-		</h1>
+<AppShell>
+	<svelte:fragment slot="header">
+		<AppBar>
+			<svelte:fragment slot="lead"
+				><a href="/" class="h3"><span class="font-bold">Desire Chat</span></a></svelte:fragment
+			>
+			<svelte:fragment slot="trail">
+				<div class="flex items-center space-x-4">
+					<Nav />
+				</div>
+			</svelte:fragment>
+		</AppBar>
+	</svelte:fragment>
+	<!-- <svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment> -->
+	<!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
+	<!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
+	<!-- Router Slot -->
+	<!-- TODO: use variable for container width -->
+	<div class="w-full px-2 pt-2 md:px-4 lg:px-8">
+		<slot />
 	</div>
-</header>
-<slot class="container" />
-
-<style>
-	.header-bar {
-		width: 100%;
-		background: rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(10px);
-		display: flex;
-	}
-</style>
+	<!-- ---- / ---- -->
+	<!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
+	<!-- <svelte:fragment slot="footer">Footer</svelte:fragment> -->
+</AppShell>
