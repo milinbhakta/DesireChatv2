@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import chatClient from '$lib/chatClient';
 	let username: string = '';
 
 	async function getToken(username: string) {
@@ -19,7 +20,15 @@
 		const target = event.target as HTMLInputElement;
 		username = target.value;
 		const token = await getToken(username);
-		goto('/chat', { state: { token } });
+		if (!chatClient.user && token && username) {
+			await chatClient.connectUser(
+				{ id: username, name: username, image: 'https://getstream.io/random_svg/?name=John' },
+				token
+			);
+		}
+		if (chatClient.user && chatClient.user.id === username) {
+			goto(`/chat`);
+		}
 	}
 </script>
 

@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import chatClient from '$lib/chatClient';
+
+	onMount(() => {
+		console.log('Chat page', chatClient);
+	});
 </script>
 
-<div>
-	<h1>Welcome to the destination page!</h1>
-	<p>Your token is: asdasd</p>
-</div>
+<div>Chat page</div>
