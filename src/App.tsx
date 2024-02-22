@@ -20,9 +20,8 @@ const user: User = {
   image: `https://getstream.io/random_png/?id=${userId}&name=${userName}`,
 };
 
-const apiKey = "3umjzmz8k42g";
-const userToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoic29saXRhcnktdmlvbGV0LTUifQ.Y08OHnM7mS50WGIeYO8X_KaWGKxDVWca8c0oa0fOz-I";
+const apiKey = import.meta.env.VITE_STREAM_API_KEY;
+const userToken = import.meta.env.VITE_STREAM_USER_TOKEN;
 
 const chatClient = new StreamChat(apiKey);
 chatClient.connectUser(user, userToken);
