@@ -1,0 +1,17 @@
+{
+  "name": "desirechatv2",
+  "version": "1.0.0",
+  "description": "A updated version of desirechat",
+  "scripts": {
+    "dev": "npm -w packages run dev",
+    "dev:server": "npm -w packages/server run dev",
+    "dev:client": "npm -w packages/client run dev",
+    "build": "npm -w packages run build",
+    "start": "npm -w packages run start"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "Milin Bhakta",
+  "license": "ISC"
+}
